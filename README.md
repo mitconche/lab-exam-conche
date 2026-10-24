@@ -12,7 +12,7 @@ Student Manager is a Laravel-based web application for managing student records.
 - Input validation for student name, email, and course
 - Student ownership authorization using policies
 - API token authentication using Laravel Sanctum
-- Protected API endpoint that returns students with course information
+- Protected API endpoint that returns student records with course information
 
 ## Technologies Used
 
@@ -25,42 +25,37 @@ Student Manager is a Laravel-based web application for managing student records.
 
 ## Installation and Setup
 
-### 1. Install dependencies
+### 1. Install Dependencies
 
 ```bash
 composer install
 ```
 
-### 2. Configure the environment
+### 2. Configure the Environment
 
 Copy `.env.example` to `.env`.
 
 Update the database settings in `.env` to match your local MySQL configuration.
 
-### 3. Generate the application key
+### 3. Generate the Application Key
 
 ```bash
 php artisan key:generate
 ```
 
-### 4. Create the database
+### 4. Create the Database
 
 Create a MySQL database named `lab_exam`, or use another name and update `.env` accordingly.
 
-### 5. Run migrations
+### 5. Run Migrations and Seed the Database
 
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
 
-### 6. Seed the database
+This command creates the database tables and seeds the admin account and course records.
 
-```bash
-php artisan db:seed --class=CourseSeeder
-php artisan db:seed --class=UserSeeder
-```
-
-### 7. Start the application
+### 6. Start the Application
 
 ```bash
 php artisan serve
